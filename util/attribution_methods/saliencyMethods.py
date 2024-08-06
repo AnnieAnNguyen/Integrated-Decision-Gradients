@@ -142,6 +142,8 @@ def getGradientsParallel(inputs, model, target_class):
 
     print(type(gradients))
 
+    print('Test')
+
 
     return gradients.detach().squeeze(), scores.detach().squeeze()
 
