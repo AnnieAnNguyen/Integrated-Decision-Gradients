@@ -134,18 +134,7 @@ def getGradientsParallel(inputs, model, target_class):
     output = model(inputs)
     scores = output[:, target_class]
 
-    # print("Test")
-
-    # print(scores)
-
     gradients = torch.autograd.grad(scores, inputs, grad_outputs = torch.ones_like(scores))[0]
-
-    print(type(scores))
-
-    # print(type(gradients))
-
-    
-
 
     return gradients.detach().squeeze(), scores.detach().squeeze()
 
